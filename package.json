@@ -10,12 +10,25 @@
     "tauri": "tauri"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.3.0",
+    "@fortawesome/free-brands-svg-icons": "^6.3.0",
+    "@fortawesome/free-regular-svg-icons": "^6.3.0",
+    "@fortawesome/free-solid-svg-icons": "^6.3.0",
+    "@fortawesome/vue-fontawesome": "^3.0.3",
+    "@tauri-apps/api": "^1.2.0",
+    "moment": "^2.29.4",
     "vue": "^3.2.45",
-    "@tauri-apps/api": "^1.2.0"
+    "vue-router": "^4.1.6",
+    "vuex": "^4.1.0",
+    "vuex-persistedstate": "^4.1.0"
   },
   "devDependencies": {
+    "@tauri-apps/cli": "^1.2.2",
     "@vitejs/plugin-vue": "^4.0.0",
-    "vite": "^4.0.0",
-    "@tauri-apps/cli": "^1.2.2"
+    "cross-env": "^7.0.3",
+    "vite": "^4.0.0"
+  },
+  "resolutions": {
+    "mini-css-extract-plugin": "2.4.7"
   }
 }
