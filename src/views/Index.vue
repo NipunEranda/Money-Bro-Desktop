@@ -9,6 +9,7 @@
 <script>
 
 import * as fs from '@tauri-apps/api/fs';
+import * as os from '@tauri-apps/api/os';
 import * as tauriPath from '@tauri-apps/api/path';
 import * as shell from '@tauri-apps/api/shell';
 import { invoke } from '@tauri-apps/api/tauri';
@@ -29,20 +30,22 @@ export default {
                 createdOn: (new Date().toLocaleString())
             };
 
-            const filePath = `${await tauriPath.documentDir()}MoneyBro\\config.json`;
+            const platform = await os.platform();
+
+            const filePath = `${await tauriPath.documentDir()}MoneyBro${platform == 'win32' ? '\\' : '/'}config.json`;
             fs.readTextFile(filePath).then((data) => {
-                console.log('file exists');
+                // console.log('file exists');
             }).catch(async e => {
-                if (e.includes('os error 3')) {
+                if (e.includes('os error 3') || e.includes('os error 2')) {
                     await fs.createDir('MoneyBro', { dir: fs.BaseDirectory.Document, recursive: true })
-                    await fs.writeTextFile('MoneyBro\\config.json', JSON.stringify(appObj, 2, null), { dir: fs.BaseDirectory.Document });
-                    notify('User Data', 'User data store is located in Documents/MoneyBro');
+                    await fs.writeTextFile(`${await tauriPath.documentDir()}MoneyBro${platform == 'win32' ? '\\' : '/'}config.json`, JSON.stringify(appObj, null, 2), { dir: fs.BaseDirectory.Document });
+                    notify('User Data', 'MoneyBro data store is located in Documents/MoneyBro');
                 } else {
                     notify('Something went wrong', e);
                 }
             })
 
-            console.log(await fs.readTextFile(filePath));
+            // console.log(await fs.readTextFile(filePath));
         }
     }
 };
