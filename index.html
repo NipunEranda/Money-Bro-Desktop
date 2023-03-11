@@ -5,92 +5,18 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script src="/bootstrap-5.0.2-dist/js/jquery.js"></script>
+  <script src="/bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script>
+  <link rel="stylesheet" href="/bootstrap-5.0.2-dist/css/bootstrap.css" />
+
+
   <title>Tauri + Vue 3 App</title>
 </head>
 
 <body>
-  <div data-tauri-drag-region class="titlebar">
-    <div class="titlebar-button" id="titlebar-minimize">
-      <img alt="minimize" />
-    </div>
-    <div class="titlebar-button" id="titlebar-maximize">
-      <img alt="maximize" />
-    </div>
-    <div class="titlebar-button" id="titlebar-close">
-      <img alt="close" />
-    </div>
-  </div>
   <div id="app"></div>
   <script type="module" src="/src/main.js"></script>
 </body>
 
 </html>
-
-<style>
-  .titlebar {
-    height: 30px;
-    background: #242424;
-    color: #FFF;
-    user-select: none;
-    display: flex;
-    justify-content: flex-end;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  .titlebar-button {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    color: #ddd;
-    width: 30px;
-    height: 30px;
-  }
-
-  .titlebar-button img{
-    width: 15px;
-  }
-
-  #titlebar-minimize img{
-    content: url('/Buttons/min-normal.png');
-  }
-
-  #titlebar-minimize img:hover{
-    content: url('/Buttons/min-hover.png');
-  }
-
-  #titlebar-maximize img{
-    content: url('/Buttons/max-normal.png');
-  }
-
-  #titlebar-maximize img:hover{
-    content: url('/Buttons/max-hover.png');
-  }
-
-  #titlebar-close img{
-    content: url('/Buttons/close-normal.png');
-  }
-
-  #titlebar-close img:hover{
-    content: url('/Buttons/close-hover.png');
-  }
-
-  .titlebar-button img:hover {
-    cursor: pointer;
-  }
-</style>
-
-<script type="module">
-  import { appWindow } from '@tauri-apps/api/window'
-  document
-    .getElementById('titlebar-minimize')
-    .addEventListener('click', () => appWindow.minimize())
-  document
-    .getElementById('titlebar-maximize')
-    .addEventListener('click', () => appWindow.toggleMaximize())
-  document
-    .getElementById('titlebar-close')
-    .addEventListener('click', () => appWindow.close())
-</script>
