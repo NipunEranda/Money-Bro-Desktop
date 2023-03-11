@@ -36,9 +36,9 @@ export default {
             fs.readTextFile(filePath).then((data) => {
                 // console.log('file exists');
             }).catch(async e => {
-                if (e.includes('os error 3')) {
+                if (e.includes('os error 3') || e.includes('os error 2')) {
                     await fs.createDir('MoneyBro', { dir: fs.BaseDirectory.Document, recursive: true })
-                    await fs.writeTextFile('MoneyBro\\config.json', JSON.stringify(appObj, null, 2), { dir: fs.BaseDirectory.Document });
+                    await fs.writeTextFile(`${await tauriPath.documentDir()}MoneyBro${platform == 'win32' ? '\\' : '/'}config.json`, JSON.stringify(appObj, null, 2), { dir: fs.BaseDirectory.Document });
                     notify('User Data', 'MoneyBro data store is located in Documents/MoneyBro');
                 } else {
                     notify('Something went wrong', e);
