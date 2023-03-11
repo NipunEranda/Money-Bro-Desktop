@@ -1,11 +1,6 @@
-<script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import Greet from "./components/Greet.vue";
-</script>
-
 <template>
   <div class="container">
+    <TitleBar />
     <h1>Welcome to Tauri!</h1>
 
     <div class="row">
@@ -28,18 +23,25 @@ import Greet from "./components/Greet.vue";
       +
       <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
       +
-      <a href="https://github.com/tauri-apps/tauri-vscode" target="_blank"
-        >Tauri</a
-      >
+      <a href="https://github.com/tauri-apps/tauri-vscode" target="_blank">Tauri</a>
       +
-      <a href="https://github.com/rust-lang/rust-analyzer" target="_blank"
-        >rust-analyzer</a
-      >
+      <a href="https://github.com/rust-lang/rust-analyzer" target="_blank">rust-analyzer</a>
     </p>
-
-    <Greet />
   </div>
 </template>
+
+<script>
+import TitleBar from "./components/TitleBar.vue";
+
+export default {
+  data() {
+    return {}
+  },
+  components: {
+    TitleBar
+  },
+};
+</script>
 
 <style scoped>
 .logo.vite:hover {
