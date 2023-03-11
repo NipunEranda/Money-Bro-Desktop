@@ -1,7 +1,7 @@
 <template>
     <div data-tauri-drag-region class="titlebar pointer">
         <span data-tauri-drag-region class="titlebarLabel">
-            <img src="../assets/32x32.png" alt="" width="20">
+            <img src="../assets/32x32.png" alt="" width="25">
         </span>
         <div class="titlebar-button" id="titlebar-minimize">
             <img alt="minimize" @click="windowMinimize()" />
@@ -98,6 +98,5 @@ function windowMaximize() {
 .titlebarLabel {
     position: absolute;
     left: 5px;
-    top: 5px;
 }
 </style>

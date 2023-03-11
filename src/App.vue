@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="root">
     <TitleBar />
     <router-view />
   </div>
@@ -19,6 +19,14 @@ export default {
 </script>
 
 <style scoped>
+
+.root{
+  height: 70vh;
+  margin-top: 30px;
+  color: white;
+  background-color: #2f2f2f;
+}
+
 .logo.vite:hover {
   filter: drop-shadow(0 0 2em #747bff);
 }
