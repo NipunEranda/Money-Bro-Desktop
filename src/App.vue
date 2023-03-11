@@ -25,6 +25,7 @@ export default {
   margin-top: 30px;
   color: white;
   background-color: #2f2f2f;
+  position: relative;
 }
 
 .logo.vite:hover {

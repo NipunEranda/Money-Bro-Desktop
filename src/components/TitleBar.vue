@@ -1,7 +1,7 @@
 <template>
     <div data-tauri-drag-region class="titlebar pointer">
         <span data-tauri-drag-region class="titlebarLabel">
-            <img src="../assets/32x32.png" alt="" width="25">
+            <img src="../assets/32x32.png" alt="" width="25"><span class="ms-1" style="vertical-align: middle;">MoneyBro</span>
         </span>
         <div class="titlebar-button" id="titlebar-minimize">
             <img alt="minimize" @click="windowMinimize()" />
