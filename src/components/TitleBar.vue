@@ -96,6 +96,7 @@ function windowMaximize() {
     }, */
 
 .titlebarLabel {
+    margin-top: 2px;
     position: absolute;
     left: 5px;
 }

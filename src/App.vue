@@ -21,7 +21,6 @@ export default {
 <style scoped>
 
 .root{
-  height: 70vh;
   margin-top: 30px;
   color: white;
   background-color: #2f2f2f;

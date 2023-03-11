@@ -112,6 +112,28 @@ button {
   cursor: pointer;
 }
 
+.box{
+  border-radius: 0;
+}
+
+.main {
+  margin: auto;
+  margin-top: 20%;
+  display: grid;  
+  width: 80%;
+}
+
+/* Alignments */
+
 .center{
   margin: auto;
+}
+
+
+.float-left{
+  float:left !important;
+}
+
+.float-right{
+  float:right !important;
 }

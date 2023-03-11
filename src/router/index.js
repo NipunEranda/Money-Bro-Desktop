@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Index from '../views/Index.vue';
 import About from '../views/About.vue';
+import InitialSetup from '../views/Initial-Setup/Index.vue';
 
 const routes = [
     {
@@ -12,6 +13,11 @@ const routes = [
         path: '/about',
         name: 'about',
         component: About
+    },
+    {
+        path: '/init',
+        name: 'initial-setup',
+        component: InitialSetup
     }
 ];
 
