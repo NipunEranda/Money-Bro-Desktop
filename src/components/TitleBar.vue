@@ -1,13 +1,16 @@
 <template>
-    <div data-tauri-drag-region class="titlebar">
-        <div class="titlebar-button" id="titlebar-minimize" @click="windowMinimize()">
-            <img alt="minimize" />
+    <div data-tauri-drag-region class="titlebar pointer">
+        <span data-tauri-drag-region class="titlebarLabel">
+            <img src="../assets/32x32.png" alt="" width="20">
+        </span>
+        <div class="titlebar-button" id="titlebar-minimize">
+            <img alt="minimize" @click="windowMinimize()" />
         </div>
-        <div class="titlebar-button" id="titlebar-maximize" @click="windowMaximize()">
-            <img alt="maximize" />
+        <div class="titlebar-button" id="titlebar-maximize">
+            <img alt="maximize" @click="windowMaximize()" />
         </div>
-        <div class="titlebar-button" id="titlebar-close" @click="windowClose()">
-            <img alt="close" />
+        <div class="titlebar-button" id="titlebar-close">
+            <img alt="close" @click="windowClose()" />
         </div>
     </div>
 </template>
@@ -16,17 +19,18 @@
 import { ref } from 'vue'
 import { appWindow } from '@tauri-apps/api/window';
 
-function windowClose(){
+function windowClose() {
     appWindow.close();
 }
 
-function windowMinimize(){
+function windowMinimize() {
     appWindow.minimize();
 }
 
-function windowMaximize(){
+function windowMaximize() {
     appWindow.toggleMaximize();
 }
+
 </script>
 
 <style scoped>
@@ -53,7 +57,7 @@ function windowMaximize(){
 }
 
 .titlebar-button img {
-    width: 15px;
+    width: 14px;
 }
 
 #titlebar-minimize img {
@@ -82,5 +86,18 @@ function windowMaximize(){
 
 .titlebar-button img:hover {
     cursor: pointer;
+}
+
+/* titlebarLabel: {
+        display: 'inline',
+        marginLeft: 5,
+        // marginLeft: 46 * 2,  // for center labels
+        lineHeight: '30px'
+    }, */
+
+.titlebarLabel {
+    position: absolute;
+    left: 5px;
+    top: 5px;
 }
 </style>
